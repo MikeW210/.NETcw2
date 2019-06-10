@@ -17,11 +17,7 @@ namespace ConsoleApp1
             myDelegate += tabSize;
 
         }
-        public Tablica(int liczba)
-        {
-            tab = new int[liczba];
-        }
-
+    
         public void tabSize(int sizeOfArray)
         {
             Console.WriteLine("Rozmiar tablicy: " + sizeOfArray);
@@ -36,18 +32,22 @@ namespace ConsoleApp1
                 wypiszTablice(i);
             }
 
-            Console.WriteLine("TAB LENGTH: " + tab.Length);
+           
         }
 
         public void add(int x)
         {
             if (index >= tab.Length)
             {
-                
-                makeItBigger(2*tab.Length);
-            }
-            tab[index++] = x;
 
+                makeItBigger(2 * tab.Length);
+                tab[index++] = x;
+            }
+            else
+            {
+                tab[index++] = x;
+            }
+            myDelegate(tab.Length);
         }
 
         public void makeItBigger(int x)
